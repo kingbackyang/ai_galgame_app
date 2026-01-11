@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GalGame Agent · 前后端分离版</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="hero">
+      <div class="hero__copy">
+        <p class="pill pill--ghost">GalGame Agent · API 驱动</p>
+        <h1>生成角色、章节蓝图与动态场景</h1>
+        <p class="muted">输入角色与世界观，后端通过 .env 中的模型与 URL 调用生成剧情、对话、立绘与背景，前端只负责渲染。</p>
+        <div class="hero__actions">
+          <button id="start-btn" class="btn primary">开始一段新故事</button>
+          <span id="start-hint" class="muted small"></span>
+        </div>
+      </div>
+      <div class="hero__badge">
+        <div class="badge-glow"></div>
+        <div class="badge-core">
+          <span class="eyebrow">状态</span>
+          <strong>API · 在线</strong>
+          <span class="muted small">前后端已分离</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="panel start">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">设定</p>
+          <h2>角色 & 世界观</h2>
+        </div>
+        <div class="muted small">模型与 URL 从 .env 注入</div>
+      </div>
+      <div class="form-grid">
+        <label class="field">
+          <span>角色关键词 / 设定</span>
+          <input id="role-input" type="text" placeholder="例：傲娇邻家女孩，表面毒舌内心柔软">
+        </label>
+        <label class="field">
+          <span>世界观关键词 / 设定</span>
+          <input id="world-input" type="text" placeholder="例：赛博朋克校园，地下美食角斗场">
+        </label>
+        <div class="field">
+          <span>操作</span>
+          <button id="start-inline" class="btn">生成世界</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel stage">
+      <div class="stage__visual">
+        <img id="bg-image" alt="背景图" />
+        <div id="overlay" class="overlay">等待开始</div>
+        <div class="stage__tags">
+          <span class="pill" id="char-name">角色</span>
+          <span class="pill" id="node-label">节点 -</span>
+          <span class="pill" id="affection">好感度 -</span>
+        </div>
+      </div>
+      <div class="stage__body">
+        <div class="dialogue">
+          <div class="dialogue__name" id="dialogue-name">角色</div>
+          <div class="dialogue__text" id="dialogue-text">这里会显示对话与内心</div>
+        </div>
+        <div class="choices">
+          <button id="choice-a" class="btn ghost" style="display:none;"></button>
+          <button id="choice-b" class="btn ghost" style="display:none;"></button>
+        </div>
+        <div class="input-row">
+          <input id="user-input" type="text" placeholder="输入台词或选择，回车发送">
+          <button id="send-btn" class="btn primary">发送</button>
+        </div>
+        <div class="logic">
+          <p class="eyebrow">导演依据</p>
+          <p id="logic-text" class="muted">-</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel info">
+      <div class="info__world">
+        <div>
+          <p class="eyebrow">世界观</p>
+          <p id="world-view" class="muted">-</p>
+        </div>
+        <div class="traits">
+          <div><span class="label">外貌</span><p id="trait-appearance">-</p></div>
+          <div><span class="label">性格</span><p id="trait-personality">-</p></div>
+          <div><span class="label">背景</span><p id="trait-background">-</p></div>
+        </div>
+      </div>
+      <div class="info__blueprint">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">剧情蓝图</p>
+            <h3>节点概览</h3>
+          </div>
+          <button id="copy-log" class="btn ghost">复制对话</button>
+        </div>
+        <div id="blueprint-list" class="bp-list"></div>
+      </div>
+    </section>
+
+    <section class="panel history">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">实时记录</p>
+          <h3>对话 & 导演备注</h3>
+        </div>
+        <div class="muted small">仅前端渲染，不含密钥</div>
+      </div>
+      <div id="conv-list" class="conv-list"></div>
+    </section>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
