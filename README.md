@@ -62,6 +62,44 @@
 - 图像生成封装：`backend/services/images.py`
 - 更新 UI 主题/布局：`frontend/styles.css` 和 `frontend/index.html`
 
+## 💖 Support & VIP Edition
+
+如果你对 **GalGame Agent（AI 恋爱养成 / 剧情生成 / 多模态交互）** 项目感兴趣，  
+或者正在关注 **AI GalGame / AI 剧情生成 / AI 虚拟角色陪伴** 相关方向，  
+欢迎通过微信支持本项目的发展。
+
+**VIP 版本正在开发中**，你的支持将用于更强大的模型、更高质量的图像生成，以及更沉浸的交互体验。
+
+- 微信赞助（请替换为你自己的二维码图片）  
+  ![WeChat Pay QR Code](assets/shoukuan.jpg)
+
+---
+
+## 🌟 GalGame Agent · VIP Edition（规划中）
+
+VIP 版本不仅仅是模型规模的提升，而是一次 **完整的沉浸式 GalGame 体验升级**。
+
+- 🎭 **更精彩、跌宕起伏的剧情**
+  - 多阶段叙事结构：序章 / 分支线 / 个人线 / 真结局
+  - 角色具备长期记忆、隐性动机与情绪演化
+  - 关键选择将永久影响剧情走向，而非一次性分支
+
+- 🎨 **更高质量的图像生成**
+  - 角色立绘风格高度一致，角色身份稳定
+  - 场景 CG 具备镜头语言、氛围光影与叙事构图
+  - 重要剧情节点解锁专属 CG / Ending 插画
+
+- 🔊 **语音与沉浸式体验（规划中）**
+  - 角色对白支持 TTS（多情绪、多声线）
+  - 自动生成场景环境音与背景音乐（BGM）
+  - 可扩展为视觉小说模式或 AI 陪伴模式
+
+- 🧠 **更智能的 GalGame Agent 内核**
+  - 好感度升级为关系状态机，而非简单数值
+  - 支持隐藏事件、彩蛋路线与多周目体验
+  - 提供面向创作者的剧情与世界观扩展接口
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
