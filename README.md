@@ -70,8 +70,10 @@
 
 **VIP 版本正在开发中**，你的支持将用于更强大的模型、更高质量的图像生成，以及更沉浸的交互体验。
 
-- 微信赞助（请替换为你自己的二维码图片）  
-  ![WeChat Pay QR Code](assets/shoukuan.jpg)
+- 微信赞助
+<p align="center">
+  <img src="assets/shoukuan.jpg" alt="WeChat Pay QR Code" width="220">
+</p>
 
 ---
 
